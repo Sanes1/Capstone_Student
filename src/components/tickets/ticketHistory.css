@@ -1,0 +1,398 @@
+/* ── Inherits shared layout from dashboard ── */
+/* Copy all shared classes (top-bar, sidebar, nav, support-box,
+   main-content, tickets-section, tickets-table, pagination, stat cards)
+   from Dashboard.css — only ticket-history-specific styles live here */
+
+/* ── General Layout ── */
+.th-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #E2E4E7;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* ── Top Bar ── */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #EBECEF;
+  border-bottom: 1px solid #D1D5DB;
+  padding: 0 24px 0 16px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #C8D5C0;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.logo-bar {
+  height: 14px;
+  width: 120px;
+  background-color: #D4D6DA;
+  border-radius: 4px;
+}
+
+/* ── Body ── */
+.dashboard-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 230px;
+  background-color: #EBECEF;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #D1D5DB;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.nav-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  color: #1F2937;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  background-color: #DCE7D3;
+  color: #3D703E;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  background-color: #C8D5C0;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.nav-icon.inactive {
+  background-color: #C8CDD5;
+}
+
+.support-box {
+  background-color: #DCE7D3;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 11px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.support-title {
+  font-weight: 800;
+  font-size: 11px;
+  color: #1F2937;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* ── Top Bar User ── */
+.top-bar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info { text-align: right; }
+
+.user-name {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: #111827;
+}
+
+.user-id {
+  font-size: 11px;
+  color: #6B7280;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #E5E7EB;
+  border: 1px solid #D1D5DB;
+  flex-shrink: 0;
+}
+
+/* ── Main Content ── */
+.main-content {
+  flex: 1;
+  padding: 24px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+/* ── Breadcrumb ── */
+.th-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.th-breadcrumb__active {
+  color: #111827;
+  font-weight: 700;
+}
+
+.th-breadcrumb__sep {
+  color: #D1D5DB;
+}
+
+/* ── Page Title ── */
+.th-page-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+/* ── Filters Row ── */
+.th-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.th-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 9px 14px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.th-search__icon {
+  width: 15px;
+  height: 15px;
+  color: #9CA3AF;
+  flex-shrink: 0;
+}
+
+.th-search__input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #374151;
+  width: 100%;
+  background: transparent;
+}
+
+.th-search__input::placeholder {
+  color: #9CA3AF;
+}
+
+.th-select {
+  background-color: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 9px 32px 9px 14px;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  appearance: auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.th-reset-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6B7280;
+  cursor: pointer;
+  padding: 9px 4px;
+}
+
+.th-reset-btn:hover {
+  color: #111827;
+}
+
+/* ── Tickets Table ── */
+.tickets-section {
+  background-color: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tickets-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tickets-table th {
+  background-color: #E8EDE4;
+  text-align: left;
+  font-size: 10px;
+  color: #6B7280;
+  padding: 13px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+
+.tickets-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #F3F4F6;
+  font-size: 13px;
+  color: #374151;
+}
+
+.bold-id {
+  font-weight: 700;
+  color: #111827;
+}
+
+.arrow-td {
+  text-align: right;
+  color: #9CA3AF;
+  font-size: 18px;
+}
+
+/* ── Status Pills ── */
+.th-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.th-status--pending {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.th-status--inprocess {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+.th-status--resolved {
+  background-color: #DCE7D3;
+  color: #3D703E;
+}
+
+/* ── Pagination ── */
+.pagination {
+  padding: 12px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  background-color: #E1E7DF;
+}
+
+.page-btn {
+  background-color: #E8EDE4;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6B7280;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.page-btn:hover {
+  background-color: #D9E2D3;
+}
+
+.page-btn--active {
+  background-color: #93C47D;
+  color: white;
+}
+
+/* ── Summary Cards ── */
+.th-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.th-summary-card {
+  background-color: white;
+  padding: 20px 22px;
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.th-summary-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.card-icon-box {
+  width: 34px;
+  height: 34px;
+  background-color: #F3F4F6;
+  border-radius: 8px;
+}
+
+.card-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #9CA3AF;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  line-height: 1;
+}
